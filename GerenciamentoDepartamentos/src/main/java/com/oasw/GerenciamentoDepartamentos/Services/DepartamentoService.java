@@ -13,7 +13,7 @@ public class DepartamentoService {
     @Autowired
     DepartamentoRepository departamentoRepository;
 
-    public DepartamentoModel create(DepartamentoModel departamentoModel){
+    public DepartamentoModel createDepartamento(DepartamentoModel departamentoModel){
         return departamentoRepository.save(departamentoModel);
     }
 

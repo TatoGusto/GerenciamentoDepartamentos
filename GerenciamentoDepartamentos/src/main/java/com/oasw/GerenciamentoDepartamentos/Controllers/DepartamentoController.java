@@ -18,8 +18,8 @@ public class DepartamentoController {
     DepartamentoService departamentoService;
 
     @PostMapping
-    public ResponseEntity<DepartamentoModel> create(DepartamentoModel departamentoModel){
-        DepartamentoModel request = departamentoService.create(departamentoModel);
+    public ResponseEntity<DepartamentoModel> createDepartamento(@RequestBody DepartamentoModel departamentoModel){
+        DepartamentoModel request = departamentoService.createDepartamento(departamentoModel);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(departamentoModel.getId()).toUri();
         return ResponseEntity.created(uri).body(request);
